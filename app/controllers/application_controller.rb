@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_student
 
+
+  def authorize
+     if current_student.nil?
+       redirect_to login_path
+     end
+  end
 end

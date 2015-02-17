@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
-
+  before_filter :authorize, only: [:index, :show]
+  
   def index
     @clubs = Club.all
   end
